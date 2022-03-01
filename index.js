@@ -70,7 +70,7 @@ const showDetails = phoneDetails => {
     if (!phoneDetails.others) {
         const div = document.createElement('div')
         div.innerHTML = `
-        <div class="card" style="width: 25rem;">
+        <div class="card" style="width: 18rem;">
             <img src="${phoneDetails.image}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h2 class="card-title">${phoneDetails.brand}</h2>
