@@ -1,4 +1,7 @@
+const main = document.getElementById('main')
 const details = document.getElementById('details')
+
+// search data loading
 const searchPhone = () => {
     const searchItem = document.getElementById('search-item')
     const searchText = searchItem.value
@@ -9,9 +12,11 @@ const searchPhone = () => {
         .then(data => showResult(data.data))
 }
 
+
+// display search result in UI
 const showResult = phones => {
     console.log(phones)
-    const main = document.getElementById('main')
+
     main.innerHTML = ''
     details.innerHTML = ''
     phones.slice(0, 20).forEach(phone => {
@@ -34,12 +39,16 @@ const showResult = phones => {
     })
 }
 
+
+// loading details data after clicking details button
 const detailsLoad = (phoneId) => {
     console.log(phoneId)
     fetch(`https://openapi.programming-hero.com/api/phone/${phoneId}`)
         .then(res => res.json())
         .then(data => showDetails(data.data))
 }
+
+// display details data 
 const showDetails = phoneDetails => {
     console.log(phoneDetails)
     console.log(phoneDetails)
@@ -65,6 +74,7 @@ const showDetails = phoneDetails => {
                     <p class="card-text">storage:  ${phoneDetails.mainFeatures.storage}</p>
                 
                     <p class="card-text">sensors: ${phoneDetails.mainFeatures.sensors}</p>
+                    <h4>Others: N/A</h4>
 
 
                 </div>
@@ -79,8 +89,9 @@ const showDetails = phoneDetails => {
 
 
 
-    const div = document.createElement('div')
-    div.innerHTML = `
+    else {
+        const div = document.createElement('div')
+        div.innerHTML = `
         <div class="card" style="width: 25rem;">
             <img src="${phoneDetails.image}" class="card-img-top" alt="...">
             <div class="card-body">
@@ -113,8 +124,9 @@ const showDetails = phoneDetails => {
             </div>
         </div>
         `
-    details.appendChild(div)
+        details.appendChild(div)
 
+    }
 }
 
 // const showOthers = others => {
