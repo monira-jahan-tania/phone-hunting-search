@@ -1,3 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body{
+    background-color: aquamarine;
+}
+.card{
+    border-radius: 10px;
+
+}
+.spinner{
+    margin-left: 48%;
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+    display: none;
+}
 #main{
     margin: 50px;
+    font-family: 'Poppins', sans-serif;
+}
+
+p{
+    color:rgb(75, 73, 70)
+}
+span{
+    font-size: 20px;
+    font-weight: 500;
 }
